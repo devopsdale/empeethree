@@ -3,7 +3,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const bodyParser = require('body-parser');
-
+const spawn = require("child_process").spawn;
 
 
 var indexRouter = require('./routes/index');
@@ -27,8 +27,9 @@ app.use(express.urlencoded())
 
 //get the form input
 app.post('/submit-form', (req, res) => {
-  const username = req.body.url
-  console.log(username);
+  const target = req.body.url
+  const pythonProcess = spawn('python',["/usr/local/bin/youtube-dl", target]);	
+  console.log(target);
   res.redirect('/');
   res.end()
 })
