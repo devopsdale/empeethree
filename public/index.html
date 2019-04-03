@@ -3,16 +3,20 @@
 <head>
   <title>Express</title>
   <link rel="stylesheet" href="/stylesheets/style.css">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <body>
 
-  <h2> Enter Youtube Link </h2>
   <form method="POST" action="/submit-form">
-    <input type="text" name="url" />
-    <input type="submit" />
-  </form>
+  <div class="form-group">
+    <input type="text" class="form-control" name="url" placeholder="Enter Youtube Link">
+  </div>
+  <button type="submit" class="btn btn-dark">Submit</button>
+</form>
 
 </body>
 
 </html>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" </script>
