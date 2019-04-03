@@ -28,7 +28,12 @@ app.use(express.urlencoded())
 //get the form input
 app.post('/submit-form', (req, res) => {
   const target = req.body.url
-  const pythonProcess = spawn('python',["/usr/local/bin/youtube-dl", target]);	
+  const extract = "-x";
+  const format = "--audio-format";
+  const mp3 = "mp3";
+  const out = "-o";
+  const dir = "output/%(title)s-%(id)s.%(ext)s";	
+  const pythonProcess = spawn('python',["/usr/local/bin/youtube-dl", extract, format, mp3, out, dir, target]);	
   console.log(target);
   res.redirect('/');
   res.end()
