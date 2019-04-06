@@ -32,13 +32,15 @@ app.post('/submit-form', (req, res) => {
   const format = "--audio-format";
   const mp3 = "mp3";
   const out = "-o";
-  const dir = "output/%(title)s-%(id)s.%(ext)s";	
-  const pythonProcess = spawn('python',["/usr/local/bin/youtube-dl", extract, format, mp3, out, dir, target]);	
+  const dir = "output/%(title)s-%(id)s.%(ext)s";
+  const pythonProcess = spawn('python',["/usr/local/bin/youtube-dl", extract, format, mp3, out, dir, target]);
+  //console.log(pythonProcess);
   console.log(target);
+  console.log("================= mp3 successfully created ===============     " + target);
   res.redirect('/');
   res.end()
 })
 
 module.exports = app
 
-console.log("App running: http://localhost:3000"); ;
+console.log("App running: http://localhost:7171"); ;
